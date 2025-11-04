@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CloudinaryModule } from '@cloudinary/ng';
 
+// // Cloudinary's upload widget is provided by a runtime script which attaches
+// // a `cloudinary` global to `window`. Tell TypeScript about it so the compiler
+// // doesn't error when we reference `cloudinary`.
+// declare const cloudinary: any;
 
 @Component({
   selector: 'app-root',
@@ -38,6 +42,7 @@ export class AppComponent {
     });
   }
 
+  // WITH THE WIDGET (COMMENTED OUT)
 
   // ngOnInit() {
   //   this.myWidget = cloudinary.createUploadWidget(
