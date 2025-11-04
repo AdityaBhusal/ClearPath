@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CloudinaryModule } from '@cloudinary/ng';
 
-// Cloudinary's upload widget is provided by a runtime script which attaches
-// a `cloudinary` global to `window`. Tell TypeScript about it so the compiler
-// doesn't error when we reference `cloudinary`.
-declare const cloudinary: any;
 
 @Component({
   selector: 'app-root',
@@ -13,15 +9,12 @@ declare const cloudinary: any;
   templateUrl: './app.html',
   styleUrls: ['./app.sass'] // Corrected this to styleUrls
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   cloudName = 'dcqrzfyjk'; // Replace with your Cloudinary cloud name
   uploadPreset = 'ProfilePreset'; // Replace with your upload preset
   imageUrl: string | null = null;
   myWidget: any;
 
-ngOnInit(): void {
-  alert('ngOnInit called');
-}
 
   onFileSelected(event : any){
     const file = event.target.files[0];
